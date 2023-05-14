@@ -197,6 +197,9 @@ const de: LocaleType = {
     Edit: "Kontext- und Gedächtnis-Prompts",
     Add: "Hinzufügen",
   },
+  WX: {
+    Name: "chatgpt使用说明",
+  },
   Plugin: {
     Name: "Plugin",
   },

@@ -192,6 +192,9 @@ const cs: LocaleType = {
     Edit: "Kontextové a paměťové pokyny",
     Add: "Přidat pokyn",
   },
+  WX: {
+    Name: "chatgpt使用说明",
+  },
   Plugin: {
     Name: "Plugin",
   },

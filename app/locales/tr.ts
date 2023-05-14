@@ -195,6 +195,9 @@ const tr: LocaleType = {
     Edit: "Bağlamsal ve Bellek Komutları",
     Add: "Yeni Ekle",
   },
+  WX: {
+    Name: "chatgpt使用说明",
+  },
   Plugin: {
     Name: "Plugin",
   },

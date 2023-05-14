@@ -191,6 +191,9 @@ const vi: LocaleType = {
     Edit: "Thiết lập ngữ cảnh và bộ nhớ",
     Add: "Thêm tin nhắn",
   },
+  WX: {
+    Name: "chatgpt使用说明",
+  },
   Plugin: {
     Name: "Plugin",
   },

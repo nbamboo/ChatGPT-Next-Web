@@ -195,6 +195,9 @@ const jp: LocaleType = {
     Edit: "前置コンテキストと履歴メモリ",
     Add: "新規追加",
   },
+  WX: {
+    Name: "chatgpt使用说明",
+  },
   Plugin: { Name: "插件" },
   Mask: {
     Name: "面具",

@@ -195,6 +195,9 @@ const ru: LocaleType = {
     Edit: "Контекстные и памятные подсказки",
     Add: "Добавить подсказку",
   },
+  WX: {
+    Name: "chatgpt使用说明",
+  },
   Plugin: {
     Name: "Плагин",
   },

@@ -195,6 +195,9 @@ const it: LocaleType = {
     Edit: "Prompt contestuali e di memoria",
     Add: "Aggiungi altro",
   },
+  WX: {
+    Name: "chatgpt使用说明",
+  },
   Plugin: {
     Name: "Plugin",
   },

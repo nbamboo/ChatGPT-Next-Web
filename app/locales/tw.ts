@@ -188,6 +188,9 @@ const tw: LocaleType = {
     Edit: "前置上下文和歷史記憶",
     Add: "新增一條",
   },
+  WX: {
+    Name: "chatgpt使用说明",
+  },
   Plugin: { Name: "插件" },
   Mask: {
     Name: "面具",
