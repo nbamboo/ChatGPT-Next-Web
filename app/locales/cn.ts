@@ -190,6 +190,9 @@ const cn = {
     Edit: "当前对话设置",
     Add: "新增预设对话",
   },
+  WX: {
+    Name: "chatgpt使用说明",
+  },
   Plugin: {
     Name: "插件",
   },

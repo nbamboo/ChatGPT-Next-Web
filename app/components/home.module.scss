@@ -571,3 +571,20 @@
   height: 100%;
   width: 100%;
 }
+
+.wx-content1 {
+  display: flex; align-items: flex-start; flex-direction: column; margin-bottom: 20px;
+}
+
+.wx-content2 {
+  min-width: 100px; color: rgb(145, 109, 213);
+}
+
+.wx-content3 {
+  margin: 20px 0px;
+}
+
+.wx-content4 {
+  width: 10%;
+  margin-top: 20px;
+}

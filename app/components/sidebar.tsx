@@ -1,10 +1,11 @@
-import { useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 
 import styles from "./home.module.scss";
 
 import { IconButton } from "./button";
 import SettingsIcon from "../icons/settings.svg";
 import GithubIcon from "../icons/github.svg";
+import WechatIcon from "../icons/wechat.svg";
 import ChatGptIcon from "../icons/chatgpt.svg";
 import AddIcon from "../icons/add.svg";
 import CloseIcon from "../icons/close.svg";
@@ -24,9 +25,31 @@ import {
 } from "../constant";
 
 import { Link, useNavigate } from "react-router-dom";
+import { Modal} from "./ui-lib";
 import { useMobileScreen } from "../utils";
 import dynamic from "next/dynamic";
 import { showToast } from "./ui-lib";
+
+
+export function WXModel(props: { onClose: () => void }) {
+  return (
+    <div className="modal-mask">
+      <Modal
+        title={Locale.WX.Name}
+        onClose={() => props.onClose()}
+      >
+        <div>
+            <div className={styles["wx-content1"]}>
+                <h4 className={styles["wx-content2"]}>「如何白嫖使用ChatGPT」：</h4>
+                <div className={styles["wx-content3"]}>1、关注公众号「 树先生 」</div>
+                <div>2、回复关键字「 sj 」（ 及时加入粉丝群，密码将会不定期在群更新 ）</div>
+                <div>3、教你开发AI应用，小白也能学会。</div><img className={styles["wx-content4"]} src="https://f005.backblazeb2.com/file/nbamboo/lwz.png"/ >
+            </div>
+        </div>
+      </Modal>
+    </div>
+  );
+}
 
 const ChatList = dynamic(async () => (await import("./chat-list")).ChatList, {
   loading: () => null,
@@ -109,14 +132,15 @@ export function SideBar(props: { className?: string }) {
   const { onDragMouseDown, shouldNarrow } = useDragSideBar();
   const navigate = useNavigate();
   const config = useAppConfig();
+  const [showWXModal, setShowWXModal] = useState(false);
+
 
   useHotKey();
 
   return (
     <div
-      className={`${styles.sidebar} ${props.className} ${
-        shouldNarrow && styles["narrow-sidebar"]
-      }`}
+      className={`${styles.sidebar} ${props.className} ${shouldNarrow && styles["narrow-sidebar"]
+        }`}
     >
       <div className={styles["sidebar-header"]}>
         <div className={styles["sidebar-title"]}>ChatGPT Next</div>
@@ -174,9 +198,11 @@ export function SideBar(props: { className?: string }) {
             </Link>
           </div>
           <div className={styles["sidebar-action"]}>
-            <a href={REPO_URL} target="_blank">
-              <IconButton icon={<GithubIcon />} shadow />
-            </a>
+            <IconButton icon={<WechatIcon />} shadow
+              onClick={() => {
+                setShowWXModal(true)
+              }}
+            />
           </div>
         </div>
         <div>
@@ -200,6 +226,10 @@ export function SideBar(props: { className?: string }) {
         className={styles["sidebar-drag"]}
         onMouseDown={(e) => onDragMouseDown(e as any)}
       ></div>
+
+      {showWXModal && (
+        <WXModel onClose={() => setShowWXModal(false)} />
+      )}
     </div>
   );
 }
